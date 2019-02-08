@@ -1,0 +1,257 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+font-family: Arial, Helvetica, sans-serif;
+
+}
+body {
+ background: #EAEAEA;
+}
+
+h1, h2, h3, h4, h5, h6,p{
+	margin-top: 0;	 
+	padding-right: 15px;
+	padding-left: 15px; 
+}
+
+
+#header{
+	background: #303d4b;
+	margin: 0 0 5px 0;
+	width: 1000px;
+	height: 150px;
+	margin-top: 100px; 
+	margin: auto;
+	border-bottom-right-radius:1%;
+	border-bottom-left-radius:1%;
+}
+
+#footer{
+	padding: 10px 0;
+	background: #303d4b;
+	width:1000px;
+	margin: auto;
+
+}
+
+#logo{
+	padding:0;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+}
+
+#nav {
+	background: #303d4b;
+	width: 1000px;
+	height: 56px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-shadow:none; 
+	align: center;
+	border-radius:2%;
+	margin:auto;
+	margin-top: 10px;
+}
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav li {
+    float: left;
+	margin: 0px 0 0px 0px;
+}
+
+#nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 18px 18px;
+    text-decoration: none;
+	font-size:16px;
+}
+
+
+
+#nav a:hover{
+    background-color:#ececec;
+	color: #303d4b;
+	border-radius:2%;
+}
+
+/*------------------Header Text---------------------------*/
+#header h1{
+	color:white;
+	font-size:36px;
+	text-align:center;
+	padding-top:50px;
+}
+
+/*----------------Main Content-------------------------*/
+.content {
+	width:1000px;
+	padding: 10px 0;
+	margin: auto;
+	background:#FFFFFF;
+}
+/*-----------------Register/Login---------------------------*/
+.main-form {
+  width: 30%;
+  margin: 15px auto;
+  padding: 20px;
+  border: 1px solid #B0C4DE;
+  background: white;
+  border-radius: 2% 2% 10px 10px;
+}
+.input-group {
+  margin: 10px 0px 10px 0px;
+}
+.input-group label {
+  display: block;
+  text-align: left;
+  margin: 3px;
+}
+.input-group input {
+  height: 30px;
+  width: 93%;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #B0C4DE;
+}
+.btn {
+  padding: 10px;
+  font-size: 15px;
+  color: white;
+  background: #303d4b;
+  border: none;
+  border-radius: 5px;
+  float: right;
+}
+
+.btn:hover{
+    background-color:#ececec;
+	color: #303d4b;
+	border-radius:2%;
+	border-color: 1px solid #303d4b;
+}
+.error {
+  width: 92%; 
+  margin: 0px auto; 
+  padding: 10px; 
+  border: 1px solid #a94442; 
+  color: #a94442; 
+  background: #f2dede; 
+  border-radius: 5px; 
+  text-align: left;
+}
+.success {
+  color:  #303d4b; 
+  background: #eff2f5; 
+  border: 1px solid #303d4b;
+  margin-bottom: 15px;
+  padding: 10px; 
+}
+
+#text{
+	font-size: 12px;
+}
+/*-----------------Close button-------------------------------*/
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:none;
+}
+#close:hover {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:none;
+    color:#fff;
+}
+/*-----------------Account Settings-----------------------------*/
+.add {
+  position: relative;
+  z-index: 1;
+  background: #EFEFEF;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  padding:40px;
+  text-align: left;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Style the form - display items horizontally */
+.form-inline { 
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  }
+
+/* Style the input fields */
+.form-inline input {
+  vertical-align: middle;
+  margin: 10px 5px 5px 0;
+  padding: 5px;
+  width: 100px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* Style the submit button */
+.form-inline button {
+  padding: 5px 10px;
+  background-color: #303d4b;
+  border: 1px solid #303d4b;
+  border-radius:3%;
+  color: white;
+  text-decoration:none;
+}
+
+.form-inline button:hover {
+    background-color:#ececec;
+	color: #303d4b;
+	border-radius:3%;
+	cursor:pointer;
+	text-decoration:none;
+	
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+  font-size:12px;
+  
+}
+
+/* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+/*-----------------Pop out-----------------------------*/
+.add_data_Modal{
+display: none;
+position:fixed;
+z-index: 1;
+left:0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,4);
+}
+
+#myForm{
+	width: 100%
+	height:100%
+	position: fixed;
+	background:  #EFEFEF;
+	border: 1px solid #303d4b;
+}
