@@ -52,22 +52,15 @@
         <p>Welcome <strong><?php echo $_SESSION['username']; ?></strong>!</p>
      <?php endif ?>
      
-      <div class="add">
+    <div class="add">
         <h3>Add a Network</h3>
-        <p style="font-size:14px">Your IP Address detected by the server is: <strong> <?php
-    $ip = file_get_contents('https://api.ipify.org');
-    echo $ip;
-?> </strong>. Please enter it below: </p>
-      <form class="form-inline" action="/action_page.php">
-        <label style="padding-left:15px"> IP: </label>
-          <input type="text" id="field" name="first" value="<?php if(isset($first)){echo $first;} ?>" required>
-          <label><b>.</b></label>
-          <input type="text" id="field" name="second" value="<?php if(isset($second)){echo $second;} ?>" required>
-          <label><b>.</b></label>
-           <input type="text" id="field" name="third" value="<?php if(isset($third)){echo $third;} ?>" required>
-          <label><b>.</b></label>
-          <input type="text" id="field" name="fourth" value="<?php if(isset($fourth)){echo $fourth;} ?>" required>
-          <button type="submit" name="submit_ip" id="btn">Submit</button>  
+        <p style="font-size:14px">Your IP Address detected by the server is: 
+		<strong><?php $ip = file_get_contents('https://api.ipify.org'); echo $ip; ?> </strong>.</p>
+		<form class="form-inline" action="account.php">
+          	<?php include('errors.php'); ?>
+			 <label style="padding-left:15px"> Add this network and rename: </label>
+			  <input type="text" name="ipname" value="<?php if(isset($ipname)){echo $ipname;} ?>" required>
+			  <button type="submit" class="btn" name="submit_ip" >Submit</button>  
           </form>       
       </div>
 </div>
