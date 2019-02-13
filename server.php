@@ -85,34 +85,39 @@ session_start();
 		  }
 		}
 		
-	// SUBMIT IP ADDRESS	
-	   // $ip = file_get_contents('https://api.ipify.org');
+// SUBMIT IP ADDRESS	
+		$ip = file_get_contents('https://api.ipify.org');
 		
-		//if (isset($_POST['submit_ip'])) {
+		if (isset($_POST['submit_ip'])) {
 			// receive all input values from the form
-	  		//$first = mysqli_real_escape_string($db, $_POST['first']);
-			//$second= mysqli_real_escape_string($db, $_POST['second']);
-			//$third= mysqli_real_escape_string($db, $_POST['third']);
-			//$fourth= mysqli_real_escape_string($db, $_POST['fourth']);
+	  		$ip_name = mysqli_real_escape_string($db, $_POST['ipname']);
 									
 			//combine into one string
-			//$ip_addr="{$first}{$second}{$third}{$fourth}";
+			$ip_addr='$ip';
 			
-			//check if IP already exits
-			//if ($user['ip_addr'] === $ip_addr) {
-		  	//		array_push($errors
-			// "IP address already exists");
-			//}
+				//check if IP already exits
+				if ($user['ip_addr'] === $ip_addr) {
+						array_push($errors, "IP address already exists");
+				}
+				
+				//check if IP Name has been used with the same user
+				if ($user['username'] === $username) {
+						if($user['ip_name']=$ip_name){
+							array_push($error, "IP name has been used.");
+						}
+				}
+				
+				//If no errors occured, record the ip address
+				if (count($errors) == 0) {
+					$query= "INSERT INTO users (ip_addr, ip_name) VALUES('$ip_addr','ip_name')";
+					$mysqli_query($db, $query);
+					$_SESSION['ip_addr']=$ip_addr;
+					$_SESSION['success'] = "Successfully Added Network.";
+					header('location: user-record.php');
+				} else {
+					array_push($errors, "IP address not saved, try again");
+				}
 			
-			//If no errors occured, record the ip address
-			// if (count($errors) == 0) {
-				//$query= "INSERT INTO users (ip_addr) VALUES('$ip_addr')";
-				//$mysqli_query($db, $query);
-				//$_SESSION['ip_addr']=$ip_addr;
-				//$_SESSION['success'] = "Successfully Added Network.";
-				//header('location: user-record.php');
-			 //}
-		//}else {
-			//	array_push($errors, "IP address not saved. Try again. ");
-			//}
+		
+		}
 ?>
