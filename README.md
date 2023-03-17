@@ -1,5 +1,5 @@
-# Web Application of Capstone
-Website and database codes for the project.
+# Web Application of IoT Devices Project
+Website and database codes for the capstone project (2015).
 
 ## WEBSITE: 
 - account.php: this is where we submit the detected IP address and where we RENAME the network. 
