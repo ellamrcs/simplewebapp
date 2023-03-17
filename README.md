@@ -1,13 +1,13 @@
-# capstone
-Website and database codes for the project
+# Web Application of Capstone
+Website and database codes for the project.
 
-WEBSITE: 
-a) account.php: this is where we submit the detected IP address and where we RENAME the network. 
-b) ipserver.php: this is the BRIDGE that we use to connect to the database. 
-c) errors.php: where the errors would be counted and then displayed on the website.
-d) main_style.css: style of the website.
+## WEBSITE: 
+- account.php: this is where we submit the detected IP address and where we RENAME the network. 
+- ipserver.php: this is the BRIDGE that we use to connect to the database. 
+- errors.php: where the errors would be counted and then displayed on the website.
+- main_style.css: style of the website.
 
-DATABASE: 
+## DATABASE: 
 users.sql: this is where the information would be saved
 
 1. All the files must be in the htdocs of XAMPP
